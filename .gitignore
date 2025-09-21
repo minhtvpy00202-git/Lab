@@ -1,0 +1,22 @@
+# Bỏ qua thư mục Servers (Eclipse server configs)
+Servers/
+
+# File/Folder của Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+
+# Build output
+/bin/
+/target/
+/build/
+
+# IntelliJ/VSCode (nếu có)
+.idea/
+*.iml
+.vscode/
+
+# Khác
+*.log
+*.class
