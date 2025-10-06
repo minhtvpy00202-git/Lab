@@ -15,7 +15,7 @@ import jakarta.servlet.http.Part;
 public class Servlet4_Upload extends HttpServlet {
 
 	private static final java.nio.file.Path UPLOAD_DIR = java.nio.file.Paths.get(System.getProperty("user.home"),
-			"Upload");
+			"Tai_Len");
 
 	@Override
 	public void init() throws ServletException {
