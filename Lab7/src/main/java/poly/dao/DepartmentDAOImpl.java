@@ -1,8 +1,11 @@
 package poly.dao;
 
+import java.security.PublicKey;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.text.html.parser.Entity;
 
 import poly.entity.Department;
 import poly.utils.Jdbc;
@@ -51,20 +54,51 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 	}
 
 	@Override
-	public void create(Department item) {
+	public void create(Department entity) {
 		// TODO Auto-generated method stub
-
+		String sql = "INSERT INTO Departments(Id, Name, Description) VALUES (?,?,?)";
+		
+		try {
+			Object[] values = {
+					entity.getId(),
+					entity.getName(),
+					entity.getDescription()
+			};
+			Jdbc.executeUpdate(sql, values);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);
+		}
 	}
 
 	@Override
-	public void update(Department item) {
+	public void update(Department entity) {
 		// TODO Auto-generated method stub
-
+		String sql = "UPDATE Departments SET Name=?, Description=? WHERE Id=?";
+		try {
+			Object[] values = {
+				entity.getName(),
+				entity.getDescription(),
+				entity.getId()
+			};
+			Jdbc.executeUpdate(sql, values);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);
+		}
+				
 	}
 
 	@Override
 	public void deleteById(String id) {
 		// TODO Auto-generated method stub
-
+		String sql = "DELETE FROM Departments WHERE Id = ?";
+		try {
+			Object[] values = {id};	
+			Jdbc.executeUpdate(sql, values);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);
+		}
 	}
 }

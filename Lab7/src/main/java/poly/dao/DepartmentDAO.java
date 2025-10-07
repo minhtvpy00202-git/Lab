@@ -12,10 +12,10 @@ public interface DepartmentDAO {
 	Department findById(String id);
 	
 	/*Them moi */
-	void create(Department item);
+	void create(Department entity);
 	
 	/*Cap nhat */
-	void update(Department item);
+	void update(Department entity);
 	
 	/*Xoa theo ma */
 	void deleteById(String id);
