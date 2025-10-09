@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import poly.entity.Employee;
 
 @WebServlet ({
 	"/employee/index",
@@ -19,6 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class EmployeeServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Employee form = new Employee();
 		
 	}
 }
