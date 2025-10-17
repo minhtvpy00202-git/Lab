@@ -32,8 +32,9 @@ public class Jdbc {
 		PreparedStatement stmt = null;
 		if(sql.trim().startsWith("{")) {
 			stmt = conn.prepareCall(sql);
+		} else {
+			stmt = conn.prepareStatement(sql);
 		}
-		stmt = conn.prepareStatement(sql);
 		for (int i = 0; i < values.length; i++) {
 			stmt.setObject(i+1, values[i]);
 		}

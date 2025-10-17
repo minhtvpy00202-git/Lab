@@ -51,6 +51,11 @@ public class DepartmentServlet extends HttpServlet{
 		req.setAttribute("item", form);
 		List<Department> list = dao.findAll();
 		req.setAttribute("list", list);
-		req.getRequestDispatcher("/views/department.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/department.jsp").forward(req, resp);
 	}
+	
+	
+	
 }
+
+

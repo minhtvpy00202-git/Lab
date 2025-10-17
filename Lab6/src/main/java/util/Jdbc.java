@@ -23,15 +23,18 @@ public class Jdbc {
 
 	/* INSERT/UPDATE/DELETE */
 	public static int executeUpdate(String sql) throws SQLException {
-		try (Connection conn = getConnection(); Statement st = conn.createStatement()) {
+		try (
+			Connection conn = getConnection(); 
+			Statement st = conn.createStatement()) {
 			return st.executeUpdate(sql);
 		}
 	}
 
-	/* Demo: in toàn bộ Departments (đóng tài nguyên đầy đủ) */
+	/* Demo: in toàn bộ Departments  */
 	public static void findAll() {
 		String sql = "SELECT Id, Name, Description FROM Departments";
-		try (Connection conn = getConnection();
+		try (
+				Connection conn = getConnection();
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery(sql)) {
 
